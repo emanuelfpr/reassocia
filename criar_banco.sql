@@ -1,12 +1,12 @@
-CREATE DATABASE sistema_login;
+CREATE DATABASE sistema_admin;
 
-USE sistema_login;
+USE sistema_admin;
 
-CREATE TABLE usuarios (
+CREATE TABLE administradores (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    email VARCHAR(150) NOT NULL UNIQUE,
-    senha VARCHAR(255) NOT NULL,
-    data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    usuario VARCHAR(50) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL
 );
 
+INSERT INTO administradores (usuario, senha)
+VALUES ('admin', 'Admin@123');
