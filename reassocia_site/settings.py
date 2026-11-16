@@ -75,7 +75,12 @@ WSGI_APPLICATION = "reassocia_site.wsgi.application"
 
 # Banco de dados: MySQL (padrão). Na hospedagem grátis sem MySQL, use DB_ENGINE=sqlite.
 # Crie o banco antes no MySQL: veja criar_banco.sql
-if os.environ.get("DB_ENGINE") == "sqlite":
+DB_ENGINE = os.environ.get(
+    "DB_ENGINE",
+    "sqlite" if os.environ.get("RENDER") or os.environ.get("RENDER_EXTERNAL_HOSTNAME") else "mysql",
+)
+
+if DB_ENGINE == "sqlite":
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
