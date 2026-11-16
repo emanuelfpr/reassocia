@@ -93,7 +93,7 @@ else:
             "ENGINE": "django.db.backends.mysql",
             "NAME": os.environ.get("MYSQLDATABASE", "reassocia"),
             "USER": os.environ.get("MYSQLUSER", "admin"),
-            "PASSWORD": os.environ.get("MYSQLPASSWORD", "admin1234"),
+            "PASSWORD": os.environ.get("MYSQLPASSWORD", "admin@123"),
             "HOST": os.environ.get("MYSQLHOST", "localhost"),
             "PORT": os.environ.get("MYSQLPORT", "3306"),
             "OPTIONS": {"charset": "utf8mb4"},
