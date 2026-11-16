@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: reassocia
+    runtime: python
+    plan: free
+    buildCommand: bash build.sh
+    startCommand: bash start.sh
+    envVars:
+      - key: DB_ENGINE
+        value: sqlite
+      - key: DEBUG
+        value: "False"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DJANGO_SUPERUSER_USERNAME
+        value: admin
+      - key: DJANGO_SUPERUSER_EMAIL
+        value: admin@reassocia.org
+      - key: DJANGO_SUPERUSER_PASSWORD
+        sync: false

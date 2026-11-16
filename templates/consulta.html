@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+{% include "_hero.html" with chamada="MARCAR CONSULTA" linha1="Cuidar de você" linha2="também é prioridade" texto="Agende sua consulta de forma rápida e prática pelo WhatsApp. Nossa equipe está pronta para te atender e te orientar da melhor forma." card1="Seu bem-estar " card2="importa!" %}
+
+<main class="wrap consulta">
+  <section class="painel">
+    <div class="painel-topo">
+      <span class="ico-svg">▦</span>
+      <h2>Agende sua consulta<br>pelo WhatsApp</h2>
+    </div>
+    <p>É rápido, fácil e seguro. Clique no botão abaixo e converse com a nossa equipe para escolher o melhor horário para você.</p>
+    <a class="btn btn-zap" target="_blank" rel="noopener"
+       href="https://wa.me/{{ whatsapp }}?text={{ 'Olá! Gostaria de agendar uma consulta.'|urlencode }}">☏ Agendar pelo WhatsApp →</a>
+  </section>
+
+  <aside class="lado">
+    {% for p in projetos %}
+      {% include "_card.html" %}
+    {% endfor %}
+    <a class="btn" href="{% url 'contato' %}">Fale conosco →</a>
+  </aside>
+</main>
+{% endblock %}

@@ -1,0 +1,121 @@
+[
+  {
+    "model": "core.projeto",
+    "pk": 1,
+    "fields": {
+      "nome": "Beleza e Estética",
+      "resumo": "Cuide de você e do seu futuro",
+      "descricao": "Curso de capacitação profissional em beleza e estética.",
+      "objetivos": "Formar profissionais para o mercado de beleza.",
+      "publico_atendido": "Jovens e adultos da comunidade",
+      "acoes_realizadas": "Aulas práticas e oficinas.",
+      "cor": "roxo",
+      "destaque": true,
+      "na_consulta": false,
+      "criado_em": "2026-11-16T00:00:00Z",
+      "atualizado_em": "2026-11-16T00:00:00Z"
+    }
+  },
+  {
+    "model": "core.projeto",
+    "pk": 2,
+    "fields": {
+      "nome": "Confeitaria",
+      "resumo": "Do básico ao profissional",
+      "descricao": "Curso de confeitaria, do básico ao profissional.",
+      "objetivos": "Gerar renda por meio da confeitaria.",
+      "publico_atendido": "Jovens e adultos da comunidade",
+      "acoes_realizadas": "Aulas práticas e oficinas.",
+      "cor": "verde",
+      "destaque": true,
+      "na_consulta": false,
+      "criado_em": "2026-11-16T00:00:00Z",
+      "atualizado_em": "2026-11-16T00:00:00Z"
+    }
+  },
+  {
+    "model": "core.projeto",
+    "pk": 3,
+    "fields": {
+      "nome": "Gastronomia",
+      "resumo": "Sabores que transformam",
+      "descricao": "Curso de gastronomia voltado à geração de renda.",
+      "objetivos": "Preparar alunos para atuar na área de alimentação.",
+      "publico_atendido": "Jovens e adultos da comunidade",
+      "acoes_realizadas": "Aulas práticas e oficinas.",
+      "cor": "laranja",
+      "destaque": true,
+      "na_consulta": false,
+      "criado_em": "2026-11-16T00:00:00Z",
+      "atualizado_em": "2026-11-16T00:00:00Z"
+    }
+  },
+  {
+    "model": "core.projeto",
+    "pk": 4,
+    "fields": {
+      "nome": "Pediatria",
+      "resumo": "Cuidado e atenção infantil",
+      "descricao": "Ação de cuidado e atenção à saúde infantil.",
+      "objetivos": "Orientar famílias sobre a saúde das crianças.",
+      "publico_atendido": "Crianças e famílias",
+      "acoes_realizadas": "Atendimentos e orientações.",
+      "cor": "verde",
+      "destaque": true,
+      "na_consulta": false,
+      "criado_em": "2026-11-16T00:00:00Z",
+      "atualizado_em": "2026-11-16T00:00:00Z"
+    }
+  },
+  {
+    "model": "core.projeto",
+    "pk": 5,
+    "fields": {
+      "nome": "Nutrição",
+      "resumo": "Saúde e alimentação",
+      "descricao": "Ação de orientação sobre saúde e alimentação.",
+      "objetivos": "Promover hábitos alimentares saudáveis.",
+      "publico_atendido": "Comunidade em geral",
+      "acoes_realizadas": "Atendimentos e palestras.",
+      "cor": "azul",
+      "destaque": true,
+      "na_consulta": false,
+      "criado_em": "2026-11-16T00:00:00Z",
+      "atualizado_em": "2026-11-16T00:00:00Z"
+    }
+  },
+  {
+    "model": "core.projeto",
+    "pk": 6,
+    "fields": {
+      "nome": "Cardiologia",
+      "resumo": "Seu coração em boas mãos",
+      "descricao": "Ação de cuidado com a saúde do coração.",
+      "objetivos": "Prevenir e orientar sobre doenças cardiovasculares.",
+      "publico_atendido": "Comunidade em geral",
+      "acoes_realizadas": "Consultas e orientações.",
+      "cor": "rosa",
+      "destaque": true,
+      "na_consulta": true,
+      "criado_em": "2026-11-16T00:00:00Z",
+      "atualizado_em": "2026-11-16T00:00:00Z"
+    }
+  },
+  {
+    "model": "core.projeto",
+    "pk": 7,
+    "fields": {
+      "nome": "Fisioterapia",
+      "resumo": "Cuidado que move você",
+      "descricao": "Ação de fisioterapia para a comunidade.",
+      "objetivos": "Melhorar a mobilidade e a qualidade de vida.",
+      "publico_atendido": "Comunidade em geral",
+      "acoes_realizadas": "Atendimentos e orientações.",
+      "cor": "laranja",
+      "destaque": false,
+      "na_consulta": true,
+      "criado_em": "2026-11-16T00:00:00Z",
+      "atualizado_em": "2026-11-16T00:00:00Z"
+    }
+  }
+]

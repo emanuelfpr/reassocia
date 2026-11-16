@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block titulo %}Login - Reassocia ONG{% endblock %}
+
+{% block conteudo %}
+<main class="wrap login">
+  <section class="painel">
+    <div class="painel-topo">
+      <span class="ico-svg">⌖</span>
+      <h2>Entrar na administração</h2>
+    </div>
+    <p>Acesso restrito aos responsáveis pela ONG. Informe seu usuário e senha para continuar.</p>
+
+    <form method="post" class="form">
+      {% csrf_token %}
+      <label>Usuário
+        <input type="text" name="usuario" value="{{ usuario }}" autocomplete="username" required>
+      </label>
+      <label>Senha
+        <span class="campo-senha">
+          <input type="password" name="senha" id="senha" autocomplete="current-password" required>
+          <button type="button" id="ver-senha" class="link-btn">Mostrar</button>
+        </span>
+      </label>
+      <button class="btn" type="submit">Entrar →</button>
+    </form>
+  </section>
+</main>
+{% endblock %}

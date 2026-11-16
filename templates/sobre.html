@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+{% include "_hero.html" with chamada="SOBRE NÓS" linha1="Acolher, capacitar" linha2="e transformar" texto="Conheça a Reassocia e os projetos que levam oportunidades para a nossa comunidade." %}
+
+<main class="wrap">
+  <section class="painel">
+    <h2>Quem somos</h2>
+    <p>A Reassocia é uma organização que atua em Jardim Catarina, São Gonçalo (RJ), com cursos de capacitação, ações de saúde e apoio à comunidade.</p>
+    <a class="btn" href="{% url 'index' %}#cursos">Conheça nossos projetos →</a>
+  </section>
+</main>
+{% endblock %}

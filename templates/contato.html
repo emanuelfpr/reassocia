@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+{% include "_hero.html" with chamada="ONDE ESTAMOS!" linha1="Nossa localização" linha2="e formas de contato" texto="Estamos aqui para te atender! Venha nos visitar, entre em contato ou faça uma doação." %}
+
+<main class="wrap contato">
+  <section class="painel">
+    <div class="painel-topo">
+      <span class="ico-svg">⌖</span>
+      <h2>Nossa localização</h2>
+    </div>
+    <p class="endereco">{{ endereco }}</p>
+
+    <a class="linha" target="_blank" rel="noopener" href="https://wa.me/{{ whatsapp }}">
+      <span class="linha-nome"><span class="ico-svg">☏</span> WhatsApp</span>
+      <span>→</span>
+    </a>
+    <a class="linha" target="_blank" rel="noopener" href="{{ instagram }}">
+      <span class="linha-nome"><span class="ico-svg">◎</span> Instagram</span>
+      <span>→</span>
+    </a>
+  </section>
+
+  <section class="painel">
+    <h2>Gostaria de doar para gente?</h2>
+    <p>Sua doação faz toda diferença! Pode ser em dinheiro, alimentos, roupas ou outros itens.</p>
+    <a class="btn btn-grande" target="_blank" rel="noopener"
+       href="https://wa.me/{{ whatsapp }}?text={{ 'Olá! Gostaria de fazer uma doação.'|urlencode }}">Quero doar →</a>
+  </section>
+</main>
+{% endblock %}

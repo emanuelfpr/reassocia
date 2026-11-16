@@ -1,0 +1,74 @@
+{% load static %}<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block titulo %}Reassocia ONG{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header class="topo">
+  <div class="wrap topo-in">
+    <a class="logo" href="{% url 'index' %}">
+      <strong>REASSOCIA ONG</strong>
+      <small>Acolher • Capacitar • Transformar</small>
+    </a>
+    <nav aria-label="Principal">
+      <a href="{% url 'index' %}">Início</a>
+      <a href="{% url 'consulta' %}">Consulta</a>
+      <a href="{% url 'contato' %}">Contato</a>
+      <a href="{% url 'sobre' %}">Sobre</a>
+      <a href="{% url 'admin_lista' %}">Administração</a>
+      {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}">Sair</a>
+      {% else %}
+        <a href="{% url 'login' %}">Entrar</a>
+      {% endif %}
+    </nav>
+  </div>
+</header>
+
+<div id="mensagem" class="wrap" aria-live="polite">
+  {% for m in messages %}
+    <p class="flash {{ m.tags }}" role="status">{{ m }}</p>
+  {% endfor %}
+</div>
+
+{% block conteudo %}{% endblock %}
+
+<footer class="rodape">
+  <div class="wrap rodape-in">
+    <div>
+      <p class="marca">REASSOCIA ONG</p>
+      <p>Capacitação, saúde e oportunidades</p>
+    </div>
+    <div>
+      <h4>Links rápidos</h4>
+      <ul>
+        <li><a href="{% url 'index' %}">Início</a></li>
+        <li><a href="{% url 'index' %}#cursos">Cursos</a></li>
+        <li><a href="{% url 'contato' %}">Contato</a></li>
+        <li><a href="{% url 'sobre' %}">Sobre</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contato</h4>
+      <p>{{ endereco }}</p>
+    </div>
+    <div>
+      <h4>Siga-nos</h4>
+      <div class="social">
+        <a href="{{ instagram }}" target="_blank" rel="noopener" aria-label="Instagram">◎</a>
+        <a href="{{ facebook }}" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

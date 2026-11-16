@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block titulo %}{% if editando %}Editar projeto{% else %}Novo projeto{% endif %} - Reassocia ONG{% endblock %}
+
+{% block conteudo %}
+<main class="wrap admin">
+  <h2>{% if editando %}Editar projeto{% else %}Novo projeto{% endif %}</h2>
+
+  <form method="post" class="form">
+    {% csrf_token %}
+    <label>Nome *
+      {{ form.nome }}
+    </label>
+    <label>Resumo (aparece no card)
+      {{ form.resumo }}
+    </label>
+    <label>Descrição *
+      {{ form.descricao }}
+    </label>
+    <label>Objetivos
+      {{ form.objetivos }}
+    </label>
+    <label>Público atendido
+      {{ form.publico_atendido }}
+    </label>
+    <label>Ações realizadas
+      {{ form.acoes_realizadas }}
+    </label>
+    <label>Cor do card
+      {{ form.cor }}
+    </label>
+    <label class="check">
+      {{ form.destaque }} Mostrar na página inicial
+    </label>
+    <label class="check">
+      {{ form.na_consulta }} Mostrar na página de consulta
+    </label>
+    <div class="acoes">
+      <button class="btn" type="submit">Salvar</button>
+      <a href="{% url 'admin_lista' %}">Cancelar</a>
+    </div>
+  </form>
+</main>
+{% endblock %}

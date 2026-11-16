@@ -1,0 +1,13 @@
+<a class="card cor-{{ p.cor }}" href="{% url 'projeto' p.id %}">
+  <div class="card-topo">
+    <span class="ico">✦</span>
+    <div>
+      <h3>{{ p.nome }}</h3>
+      <p>{{ p.resumo }}</p>
+    </div>
+  </div>
+  <div class="card-base">
+    <span class="pill">Saiba mais</span>
+    <span class="seta">→</span>
+  </div>
+</a>

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+{% include "_hero.html" with chamada="NOSSOS CURSOS" linha1="Conhecimento que" linha2="transforma vidas" texto="Capacitação profissional para desenvolver habilidades, conquistar oportunidades e construir um futuro melhor." card1="Seu futuro " card2="começa aqui!" %}
+
+<form class="busca" action="{% url 'index' %}" method="get" role="search">
+  <input type="search" name="q" value="{{ busca }}" placeholder="Buscar cursos..." aria-label="Buscar cursos">
+  <button type="submit" aria-label="Buscar">→</button>
+</form>
+
+<main class="wrap" id="cursos">
+  <h2>{% if busca %}Resultados da busca{% else %}Cursos em destaque{% endif %}</h2>
+  <p class="sub">Explore nossas áreas e encontre o curso ideal para você.</p>
+
+  <div class="grid">
+    {% for p in projetos %}
+      {% include "_card.html" %}
+    {% empty %}
+      <p class="vazio">Nenhum curso encontrado para “{{ busca }}”. <a href="{% url 'index' %}">Ver todos</a></p>
+    {% endfor %}
+  </div>
+
+  <section class="cta">
+    <div>
+      <h3>Não encontrou o curso ideal?</h3>
+      <p>Fale conosco e tire suas dúvidas.</p>
+    </div>
+    <a class="btn" href="{% url 'contato' %}">Fale conosco →</a>
+  </section>
+</main>
+{% endblock %}

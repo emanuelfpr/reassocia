@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block titulo %}Administração - Reassocia ONG{% endblock %}
+
+{% block conteudo %}
+<main class="wrap admin">
+  <div class="admin-topo">
+    <h2>Projetos cadastrados</h2>
+    <a class="btn" href="{% url 'admin_novo' %}">Novo projeto</a>
+  </div>
+
+  <div class="tabela-scroll">
+    <table>
+      <thead>
+        <tr><th>Nome</th><th>Cor</th><th>Na home</th><th>Na consulta</th><th></th></tr>
+      </thead>
+      <tbody>
+        {% for p in projetos %}
+        <tr>
+          <td>{{ p.nome }}</td>
+          <td>{{ p.cor }}</td>
+          <td>{{ p.destaque|yesno:"Sim,Não" }}</td>
+          <td>{{ p.na_consulta|yesno:"Sim,Não" }}</td>
+          <td><a href="{% url 'admin_editar' p.id %}">Editar</a></td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="5">Nenhum projeto cadastrado.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</main>
+{% endblock %}

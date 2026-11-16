@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block titulo %}{{ p.nome }} - Reassocia ONG{% endblock %}
+
+{% block conteudo %}
+{% include "_hero.html" with chamada="PROJETO" linha1=p.nome linha2="" texto=p.resumo %}
+
+<main class="wrap detalhe">
+  <section class="painel cor-{{ p.cor }}">
+    <h2>Sobre o projeto</h2>
+    <p>{{ p.descricao }}</p>
+
+    {% if p.objetivos %}
+      <h3>Objetivos</h3>
+      <p>{{ p.objetivos }}</p>
+    {% endif %}
+
+    {% if p.publico_atendido %}
+      <h3>Público atendido</h3>
+      <p>{{ p.publico_atendido }}</p>
+    {% endif %}
+
+    {% if p.acoes_realizadas %}
+      <h3>Ações realizadas</h3>
+      <p>{{ p.acoes_realizadas }}</p>
+    {% endif %}
+
+    <a class="btn" href="{% url 'index' %}#cursos">← Voltar</a>
+  </section>
+</main>
+{% endblock %}
