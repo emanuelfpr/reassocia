@@ -1,2 +1,11 @@
+CREATE DATABASE sistema_login;
 
-CREATE DATABASE IF NOT EXISTS reassocia CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE sistema_login;
+
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
